@@ -1,1 +1,1 @@
-# Astrophysicst | High Energy Astrophysics | Gravitaional Wave Astronomy
+# Astrophysics | High Energy Astrophysics | Gravitaional Wave Astronomy
