@@ -1,86 +1,231 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawan Tiwari | Astrophysics Researcher</title>
 
-        <!--==================== UNICONS ====================-->
-        
-        
-        <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="">
-        
-        <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        <title>Responsive Portfolio Website</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            
-        </header>
+<style>
+html {
+    scroll-behavior: smooth;
+}
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                
-            </section>
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f5f7fb;
+    color: #1b1f2a;
+}
 
-            <!--==================== ABOUT ====================-->
-            <section class="about section" id="about">
-                
-            </section>
+/* NAVBAR */
+header {
+    background: #0b1320;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-            <!--==================== SKILLS ====================-->
-            <section class="skills section" id="skills">
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px;
+}
 
-            </section>
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px 12px;
+    font-weight: 500;
+    font-size: 14px;
+}
 
-            <!--==================== QUALIFICATION ====================-->
-            <section class="qualification section">
+nav a:hover {
+    color: #4da3ff;
+}
 
-            </section>
+/* HERO */
+.hero {
+    padding: 140px 20px 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #0b1320, #1f2a44);
+    color: white;
+}
 
-            <!--==================== SERVICES ====================-->
-            <section class="services section" id="services">
-                
-            </section>
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
 
-            <!--==================== PORTFOLIO ====================-->
-            <section class="portfolio section" id="portfolio">
-                
-            </section>
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    opacity: 0.9;
+}
 
-            <!--==================== PROJECT IN MIND ====================-->
-            <section class="project section">
+/* SECTIONS */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 80px 20px;
+}
 
-            </section>
+h2 {
+    border-left: 4px solid #4da3ff;
+    padding-left: 10px;
+}
 
-            <!--==================== TESTIMONIAL ====================-->
-            <section class="testimonial section">
-                
-            </section>
+/* CARDS */
+.card {
+    background: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
 
-            <!--==================== CONTACT ME ====================-->
-            <section class="contact section" id="contact">
+/* FOOTER */
+footer {
+    background: #0b1320;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
 
-            </section>
-        </main>
+footer a {
+    color: #4da3ff;
+    text-decoration: none;
+    margin: 0 10px;
+}
 
-        <!--==================== FOOTER ====================-->
-        <footer class="footer">
-         
-        </footer>
-        
-        <!--==================== SCROLL TOP ====================-->
-        
+small {
+    opacity: 0.7;
+}
+</style>
+</head>
 
-        <!--==================== SWIPER JS ====================-->
-        <script src=""></script>
+<body>
 
-        <!--==================== MAIN JS ====================-->
-        <script src=""></script>
-    </body>
+<header>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#cv">CV</a>
+    <a href="#publications">Publications</a>
+    <a href="#science">Science & Communication</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#learning">Learning</a>
+    <a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <h1>Pawan Tiwari</h1>
+    <h3>Astrophysics Researcher</h3>
+    <p>
+        I work on high-energy astrophysics, gamma-ray bursts, transient
+        phenomena, and observational data analysis. I am passionate about
+        connecting research with public science communication.
+    </p>
+</section>
+
+<!-- CV -->
+<section id="cv">
+    <h2>Curriculum Vitae</h2>
+    <div class="card">
+        <p><b>Education:</b> Add your degrees here</p>
+        <p><b>Research:</b> Your institutions and experience</p>
+        <p><b>Download CV:</b> Add PDF link here</p>
+    </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+    <h2>Publications</h2>
+
+    <div class="card">
+        <ul>
+            <li>Paper Title 1 (Journal, Year)</li>
+            <li>Paper Title 2 (Journal, Year)</li>
+            <li>Paper Title 3 (Journal, Year)</li>
+        </ul>
+
+        <p>
+            See full list on
+            <a href="https://scholar.google.com" target="_blank">Google Scholar</a>,
+            <a href="https://arxiv.org" target="_blank">arXiv</a>, or
+            <a href="https://orcid.org" target="_blank">ORCID</a>.
+        </p>
+    </div>
+</section>
+
+<!-- SCIENCE -->
+<section id="science">
+    <h2>Science & Communication</h2>
+    <div class="card">
+        <p>
+            Outreach talks, conferences, blog posts, teaching activities,
+            and public engagement in astrophysics and space science.
+        </p>
+    </div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies">
+    <h2>Hobbies</h2>
+    <div class="card">
+        <ul>
+            <li>Astronomy observation 🔭</li>
+            <li>Photography 📸</li>
+            <li>Reading science books 📚</li>
+            <li>Coding & data science 💻</li>
+        </ul>
+    </div>
+</section>
+
+<!-- LEARNING -->
+<section id="learning">
+    <h2>Learning</h2>
+    <div class="card">
+        <p>
+            Python for astrophysics, machine learning, data analysis,
+            cosmology models, and simulation tools.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: your-email@example.com</p>
+        <p>GitHub: https://github.com/yourusername</p>
+        <p>Google Scholar: Add link</p>
+        <p>ORCID: Add link</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p><b>Pawan Tiwari</b> | Astrophysics Researcher</p>
+
+    <p>
+        <a href="#home">Home</a>
+        <a href="#cv">CV</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+    </p>
+
+    <small>
+        © 2026 Pawan Tiwari — Built with GitHub Pages
+    </small>
+</footer>
+
+</body>
+</html>
 </html>
