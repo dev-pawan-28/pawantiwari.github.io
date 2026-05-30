@@ -8,122 +8,196 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: #050814;
-    color: white;
-    overflow-x: hidden;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* STAR CANVAS (IMPORTANT FIX) */
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: radial-gradient(circle at center, #0b1430, #050814);
+body{
+    font-family:"Inter",sans-serif;
+    background:#050814;
+    color:white;
+    overflow-x:hidden;
 }
 
-/* NAV */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+/* STAR CANVAS */
+
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-3;
+    background:radial-gradient(circle at center,#0b1430,#050814);
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 12px;
+/* FLOATING TELESCOPE */
+
+.telescope{
+    position:fixed;
+    top:15%;
+    right:5%;
+    width:280px;
+    opacity:0.22;
+    z-index:-2;
+    pointer-events:none;
+    animation:drift 40s linear infinite;
 }
 
-nav a {
-    color: white;
-    margin: 8px 12px;
-    text-decoration: none;
-    font-size: 14px;
+@keyframes drift{
+    0%{
+        transform:translate(0,0) rotate(0deg);
+    }
+    25%{
+        transform:translate(-80px,30px) rotate(4deg);
+    }
+    50%{
+        transform:translate(-150px,80px) rotate(8deg);
+    }
+    75%{
+        transform:translate(-80px,120px) rotate(4deg);
+    }
+    100%{
+        transform:translate(0,0) rotate(0deg);
+    }
 }
 
-nav a:hover {
-    color: #6aa9ff;
+/* HEADER */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:8px 15px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#6aa9ff;
 }
 
 /* HERO */
-.hero {
-    text-align: center;
-    padding: 140px 20px 60px;
+
+.hero{
+    text-align:center;
+    padding:150px 20px 80px;
 }
 
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 10px;
+.hero h1{
+    font-size:60px;
+    margin-bottom:10px;
 }
 
-.hero p {
-    max-width: 700px;
-    margin: auto;
-    opacity: 0.85;
+.hero p{
+    max-width:700px;
+    margin:auto;
+    opacity:0.85;
+    font-size:18px;
 }
 
-/* ACADEMIC STATS PANEL (FIXED & VISIBLE) */
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-    gap: 15px;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+    padding:0 20px 40px;
 }
 
-.stat {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+.stat{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    backdrop-filter:blur(8px);
 }
 
-.stat h2 {
-    margin: 0;
-    font-size: 32px;
-    color: #6aa9ff;
+.stat h2{
+    color:#6aa9ff;
+    font-size:36px;
 }
 
 /* SECTIONS */
-section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
+
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:70px 20px;
 }
 
-h2 {
-    border-left: 4px solid #6aa9ff;
-    padding-left: 10px;
+section h2{
+    border-left:4px solid #6aa9ff;
+    padding-left:12px;
+    margin-bottom:25px;
 }
 
 /* CARDS */
-.card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 15px;
+
+.card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:20px;
+    backdrop-filter:blur(10px);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#6aa9ff;
+}
+
+.card p{
+    line-height:1.7;
+}
+
+/* VIDEO */
+
+.video-container{
+    position:relative;
+    width:100%;
+    padding-bottom:56.25%;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.video-container iframe{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
 }
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    opacity: 0.7;
+
+footer{
+    text-align:center;
+    padding:40px;
+    opacity:0.7;
 }
+
 </style>
 </head>
 
@@ -131,10 +205,17 @@ footer {
 
 <canvas id="stars"></canvas>
 
+<!-- Telescope -->
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/3/3f/HST-SM4.jpeg"
+class="telescope"
+alt="Space Telescope">
+
 <header>
 <nav>
     <a href="#home">Home</a>
     <a href="#cv">CV</a>
+    <a href="#research">Research</a>
     <a href="#publications">Publications</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
@@ -142,65 +223,168 @@ footer {
 </header>
 
 <!-- HERO -->
+
 <section id="home" class="hero">
-    <h1>Pawan Tiwari</h1>
-    <p>Astrophysics Researcher | High-energy Astrophysics | Gamma-ray Bursts</p>
+
+<h1>Pawan Tiwari</h1>
+
+<p>
+Astrophysics Researcher specializing in High-Energy
+Astrophysics, Gamma-Ray Bursts, X-ray Transients,
+and Multi-wavelength Studies of Cosmic Explosions.
+</p>
+
 </section>
 
-<!-- STATS PANEL (NOW CLEAR & VISIBLE) -->
+<!-- STATS -->
+
 <div class="stats">
-    <div class="stat">
-        <h2>12+</h2>
-        <p>Papers</p>
-    </div>
-    <div class="stat">
-        <h2>3</h2>
-        <p>Projects</p>
-    </div>
-    <div class="stat">
-        <h2>500+</h2>
-        <p>Citations</p>
-    </div>
+
+<div class="stat">
+<h2>12+</h2>
+<p>Research Papers</p>
+</div>
+
+<div class="stat">
+<h2>3</h2>
+<p>Major Projects</p>
+</div>
+
+<div class="stat">
+<h2>500+</h2>
+<p>Citations</p>
+</div>
+
 </div>
 
 <!-- CV -->
+
 <section id="cv">
-<h2>CV</h2>
+
+<h2>Curriculum Vitae</h2>
+
 <div class="card">
-    Education, experience, research background.
+<h3>Education & Research Experience</h3>
+
+<p>
+Add your education, affiliations, PhD work,
+research positions, and academic achievements here.
+</p>
+
 </div>
+
+</section>
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+<h2>Research Interests</h2>
+
+<div class="card">
+
+<h3>High-Energy Astrophysics</h3>
+
+<p>
+My research focuses on Gamma-Ray Bursts (GRBs),
+Fast X-ray Transients (FXRTs), relativistic jets,
+afterglow physics, transient astronomy,
+and multi-wavelength observations.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Featured Research Video</h3>
+
+<div class="video-container">
+
+<iframe
+src="https://www.youtube.com/embed/y8VDwGi0r0E"
+title="Research Video"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- PUBLICATIONS -->
+
 <section id="publications">
+
 <h2>Publications</h2>
+
 <div class="card">
-    Add your research papers here (GRBs, transients, etc.)
+
+<h3>Selected Publications</h3>
+
+<p>
+• Gamma-Ray Burst Correlations<br>
+• Fast X-ray Transients Studies<br>
+• High-energy Emission Mechanisms<br>
+• Multi-wavelength Afterglow Analysis
+</p>
+
 </div>
+
 </section>
 
 <!-- PROJECTS -->
+
 <section id="projects">
+
 <h2>Projects</h2>
+
 <div class="card">
-    Astrophysics simulations, data analysis tools, etc.
+
+<h3>Current Research Projects</h3>
+
+<p>
+Astrophysical simulations, GRB population studies,
+machine learning applications in transient astronomy,
+and observational data analysis.
+</p>
+
 </div>
+
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
+
 <h2>Contact</h2>
+
 <div class="card">
+
+<p>
 Email: your-email@example.com
+</p>
+
+<p>
+Institution: Add Institution Name
+</p>
+
 </div>
+
 </section>
 
 <footer>
+
 © 2026 Pawan Tiwari | Astrophysics Researcher
+
 </footer>
 
 <script>
-/* FIXED STARFIELD (MORE VISIBLE NOW) */
+
+/* STARFIELD */
+
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
@@ -208,40 +392,52 @@ function resize(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
+
 resize();
-window.addEventListener("resize", resize);
+window.addEventListener("resize",resize);
 
-let stars = [];
+let stars=[];
 
-for(let i=0;i<300;i++){
+for(let i=0;i<400;i++){
+
     stars.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*2,
-        d: Math.random()*1
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2.5,
+        d:Math.random()*1.5
     });
+
 }
 
 function draw(){
+
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    ctx.fillStyle = "white";
+    ctx.fillStyle="white";
 
     stars.forEach(s=>{
+
         ctx.beginPath();
         ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
         ctx.fill();
 
-        s.y += 0.6 + s.d;
+        s.y += 0.5 + s.d;
+
         if(s.y > canvas.height){
+
             s.y = 0;
             s.x = Math.random()*canvas.width;
+
         }
+
     });
 
     requestAnimationFrame(draw);
+
 }
+
 draw();
+
 </script>
 
 </body>
