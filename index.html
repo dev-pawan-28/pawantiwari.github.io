@@ -10,6 +10,106 @@
 
 <style>
 
+#telescope{
+    position:fixed;
+    width:180px;
+    left:-250px;
+    top:25vh;
+    z-index:-1;
+    pointer-events:none;
+    opacity:0.95;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,255,255,.4))
+        drop-shadow(0 0 30px rgba(106,169,255,.4));
+}
+
+
+<script>
+
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+resize();
+window.addEventListener("resize",resize);
+
+/* STARFIELD */
+
+const stars=[];
+
+for(let i=0;i<350;i++){
+    stars.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        speed:Math.random()*1.5
+    });
+}
+
+function animateStars(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle="white";
+
+    stars.forEach(star=>{
+
+        ctx.beginPath();
+        ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
+        ctx.fill();
+
+        star.y += 0.3 + star.speed;
+
+        if(star.y > canvas.height){
+            star.y = 0;
+            star.x = Math.random()*canvas.width;
+        }
+
+    });
+
+    requestAnimationFrame(animateStars);
+}
+
+animateStars();
+
+/* TELESCOPE */
+
+const telescope = document.getElementById("telescope");
+
+let tx = -250;
+let ty = canvas.height * 0.25;
+
+function moveTelescope(){
+
+    tx += 0.4;
+
+    telescope.style.left = tx + "px";
+    telescope.style.top = ty + "px";
+
+    telescope.style.transform =
+        `rotate(${6*Math.sin(tx/180)}deg)`;
+
+    if(tx > window.innerWidth + 250){
+
+        tx = -250;
+
+        ty =
+            Math.random()
+            * window.innerHeight
+            * 0.6;
+    }
+
+    requestAnimationFrame(moveTelescope);
+}
+
+moveTelescope();
+
+</script>    
 *{
     margin:0;
     padding:0;
@@ -291,6 +391,7 @@ footer{
 <body>
 
 <canvas id="stars"></canvas>
+<img id="telescope" src="hubble.png" alt="Space Telescope">
 
 <header>
 <nav>
